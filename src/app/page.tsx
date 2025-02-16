@@ -1,9 +1,57 @@
+'use client';
 import Image from "next/image";
+import Navbar from "../components/navbar";
+import { AnimatePresence } from "motion/react"
+
+import { motion } from "framer-motion";
+
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+    <div className=" items-center justify-items-center min-h-screen h-[1000px] p-4 pb-20 gap-16 sm:p-4 font-[family-name:var(--font-geist-sans)]">
+      <Navbar></Navbar>
+      <main className="flex w-full sm:px-20 pt-4 items-center justify-center">
+        <div className="bg-white bg-opacity-5 max-w-3xl w-full h-16 flex items-center justify-between px-4 border border-gray-50 border-opacity-50 rounded-lg ">
+          <motion.ul className="ul">
+            <motion.li
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="list-item"
+            >
+              <motion.div
+                className="list-item"
+                initial={{ x: -250 }}
+                exit={{ x: -250 }}
+                animate={{ x: 0 }}
+                transition={{ duration: 1 }}
+              >
+                <div className="text-3xl">TODO</div>
+              </motion.div>
+            </motion.li>
+            <motion.li
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="list-item"
+            >
+              <motion.div
+                className="list-item"
+                initial={{ x: -250 }}
+                animate={{ x: 0 }}
+                transition={{ duration: 1 }}
+              >
+                <div className="text-3xl">TODO</div>
+              </motion.div>
+            </motion.li>
+          </motion.ul>
+
+
+          
+        </div>
+
+      </main>
+
+
+      {/* <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <Image
           className="dark:invert"
           src="/next.svg"
@@ -48,54 +96,8 @@ export default function Home() {
             Read our docs
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </main> */}
+      
     </div>
   );
 }
